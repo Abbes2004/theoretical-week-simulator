@@ -1,0 +1,40 @@
+{
+  "data_origin": "SYNTHETIC",
+  "generated_at_utc": "2026-09-10T00:52:04.100954+00:00",
+  "seed": 42,
+  "range_start": "2025-01-01",
+  "range_end": "2026-06-30",
+  "id_sim_sentinel": 999999,
+  "row_counts": {
+    "edge_cases": 13,
+    "bulk": 500,
+    "total": 513
+  },
+  "real_poi_sim_source_count": 12302,
+  "date_preservation": {
+    "preserved_from_real_per_component": {},
+    "replaced_with_synthetic_per_component": {
+      "TISSU": 500,
+      "TISSU_SEC": 500,
+      "FOURNITURE": 500,
+      "FIL": 500,
+      "OK_PRODUCTION": 500
+    },
+    "note": "A real component date is preserved only if it parses as a valid date AND falls within [range_start, range_end]. The real POI extract's populated dates are all from 2021 (outside this 2025-2026 window), so in practice every date was replaced -- see docs/decisions/0003-synthetic-demo-dataset.md."
+  },
+  "calculation_status_distribution": {
+    "CALCULATED": 513
+  },
+  "blocking_element_distribution": {
+    "TISSU": 108,
+    "TISSU_SEC": 112,
+    "FOURNITURE": 107,
+    "FIL": 97,
+    "OK_PRODUCTION": 101
+  },
+  "data_origin_distribution": {
+    "SYNTHETIC": 513
+  },
+  "generator": "src/ingestion/synthetic_demo_dataset.py:build_demo_dataset",
+  "reproducibility": "Deterministic for a fixed seed: random.Random(seed) + pandas DataFrame.sample(random_state=seed)."
+}

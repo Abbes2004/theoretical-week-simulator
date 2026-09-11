@@ -1,0 +1,67 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.hypothesis/
+
+# ---------------------------------------------------------------------------
+# Raw company/source data -- MUST NEVER be committed to GitHub.
+# These are the original internship/company source files (SQL dumps, Excel
+# workbooks, PDFs). Only data/raw/README.md (which explains the exclusion,
+# with no actual data in it) is tracked; everything else under data/raw/ is
+# ignored, however deep. See data/raw/README.md for the full explanation.
+# ---------------------------------------------------------------------------
+data/raw/*
+!data/raw/README.md
+
+# Derived data (reproducible from data/raw/ + scripts, never commit)
+data/interim/*
+data/processed/*
+data/canonical/*
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+!data/canonical/.gitkeep
+
+# Benchmark-generated synthetic datasets (reproducible via seed, can be large)
+benchmarks/datasets/*
+!benchmarks/datasets/.gitkeep
+
+# Phase 2 large-scale synthetic benchmark dataset (reproducible via seed=42,
+# see scripts/generate_benchmark_dataset.py; 100k/500k/1M scales run ~100-400MB
+# each). NOT the same as data/synthetic/demo_2025_2026/, which IS tracked --
+# that 513-row demo dataset is small and is itself a project deliverable.
+data/synthetic/benchmark_scale_2025_2026/*
+!data/synthetic/benchmark_scale_2025_2026/.gitkeep
+
+# Outputs (logs, benchmark results, run artifacts)
+outputs/logs/*
+outputs/benchmarks/*
+outputs/results/*
+outputs/mapreduce/*
+!outputs/logs/.gitkeep
+!outputs/benchmarks/.gitkeep
+!outputs/results/.gitkeep
+!outputs/mapreduce/.gitkeep
+
+# ---------------------------------------------------------------------------
+# Internal AI-agent working documents -- kept on disk for reference, but not
+# published to the public GitHub repository. These are operating
+# instructions/role-framing written for the AI coding agent that built this
+# project, not project documentation a reader needs. See the GitHub cleanup
+# report for the full classification of every Markdown file in this repo.
+# ---------------------------------------------------------------------------
+MASTER_PROMPT.md
+docs/execution/15_working_llm_instructions.md
+
+# OS / editor / tooling
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.claude/
+
+#rapport
+rapport/
